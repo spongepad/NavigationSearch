@@ -1,10 +1,28 @@
 #ifndef SEARCHRESULT_H
 #define SEARCHRESULT_H
 
+#include <string>
 class SearchResult
 {
 public:
     SearchResult();
+    SearchResult(int id, std::string name, std::string address, double distance, bool favorite = false);
+
+    int getId() const {return id;};
+    std::string getName() const {return name;};
+    std::string getAddress() const {return address;};
+    double getDistance() const {return distance;};
+    bool getFavorite() const {return favorite;};
+
+    void toggleFavorite();
+    void printSearchResult() const;
+
+private:
+    int id;
+    std::string name;
+    std::string address;
+    double distance;
+    bool favorite;
 };
 
 #endif // SEARCHRESULT_H

@@ -18,7 +18,12 @@ int main(int argc, char *argv[])
     const SearchResult *searchItem = srManager.searchFromId(3);
 
     std::cout << "searchItem From ID: ";
-    searchItem->printSearchResult();
+    if(nullptr != searchItem) {
+        searchItem->printSearchResult();
+    }
+    else {
+        std::cout << "search Result not found\n";
+    }
 
     std::cout << "SearchResult Show ALL \n";
     srManager.showResult();

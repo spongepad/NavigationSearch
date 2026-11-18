@@ -9,14 +9,13 @@ class SearchResultManager
 public:
     SearchResultManager();
 
-    void addResult(const SearchResult& resultItem);
+    bool addResult(const SearchResult& resultItem);
     void sortByDistance();
-    void extracted();
     void showResult();
     void showFavorite();
 
-    int searchCount();
-    const SearchResult *searchFromId(int id);
+    int searchCount() const;
+    const SearchResult *searchFromId(int id) const;
 
 
 

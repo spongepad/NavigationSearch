@@ -9,10 +9,10 @@ public:
     SearchResult(int id, std::string name, std::string address, double distance, bool favorite = false);
 
     int getId() const {return id;};
-    std::string getName() const {return name;};
-    std::string getAddress() const {return address;};
+    const std::string& getName() const {return name;};
+    const std::string& getAddress() const {return address;};
     double getDistance() const {return distance;};
-    bool getFavorite() const {return favorite;};
+    bool isFavorite() const {return favorite;};
 
     void toggleFavorite();
     void printSearchResult() const;

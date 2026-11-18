@@ -22,6 +22,7 @@ qt_add_qml_module(appNavigationSearch
     QML_FILES
         Main.qml
         SOURCES searchresult.h searchresult.cpp
+        SOURCES searchresultmanager.h searchresultmanager.cpp
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

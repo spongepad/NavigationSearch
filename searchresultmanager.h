@@ -2,6 +2,7 @@
 #define SEARCHRESULTMANAGER_H
 
 #include <vector>
+#include <cstddef>
 #include "searchresult.h"
 
 class SearchResultManager
@@ -11,10 +12,10 @@ public:
 
     bool addResult(const SearchResult& resultItem);
     void sortByDistance();
-    void showResult();
-    void showFavorite();
+    void showResult() const;
+    void showFavorite() const;
 
-    int searchCount() const;
+    std::size_t searchCount() const;
     const SearchResult *searchFromId(int id) const;
 
 

@@ -25,14 +25,14 @@ void SearchResultManager::sortByDistance() {
     });
 }
 
-void SearchResultManager::showResult(){
+void SearchResultManager::showResult() const {
     for(const auto &item : searchResult) {
         std::cout << "id: " << item.getId() << " name: " << item.getName() << " address: " << item.getAddress()
                   << " distance: " << item.getDistance() << " favorite: " << item.isFavorite() << "\n";
     }
 }
 
-void SearchResultManager::showFavorite(){
+void SearchResultManager::showFavorite() const {
     for(const auto &item : searchResult) {
         if(item.isFavorite()) {
             std::cout << "id: " << item.getId() << " name: " << item.getName() << " address: " << item.getAddress()
@@ -41,7 +41,7 @@ void SearchResultManager::showFavorite(){
     }
 }
 
-int SearchResultManager::searchCount() const {
+std::size_t SearchResultManager::searchCount() const {
     return searchResult.size();
 }
 
@@ -50,7 +50,7 @@ const SearchResult *SearchResultManager::searchFromId(int id) const {
         return a.getId() == id;
     });
 
-    if(searchItem != searchResult.end()) {
+    if(searchItem != searchResult.cend()) {
         return &(*searchItem);
     }
     else {
